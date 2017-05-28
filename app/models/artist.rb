@@ -10,4 +10,9 @@ class Artist < ApplicationRecord
       t.string    :image_url
 
       t.timestamps
+    end
+  end
+  def show
+    @artist = Artist.find(params[:artist_id])
+  end
 end

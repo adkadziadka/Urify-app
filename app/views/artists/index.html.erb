@@ -1,7 +1,14 @@
 <h1> Our best artists</h1>
 
 <% @artists.each do |artist| %>
-<p><%= link_to artist.name, artist_path(artist.id) %></p>
+<%= link_to "Createa new Artist, new_artist_path" %>
 <% end %>
 <br>
-<%= link_to "[New Artist]", new_artist_path %>
+<%= link_to "New Artist", new_artist_path %>
+<%= link_to "All Artists", artists_path %>
+
+<% @artists.each do |artist| %>
+<h2> <%= link_to artist.name %></h2>
+<%= image_tag artist.img_url %>
+
+<% end %>

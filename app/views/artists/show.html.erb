@@ -1,5 +1,16 @@
 <h2><%= @artist.name %></h2>
 
+<% if @artist.songs.any? %>
 
-<p> Age: <%= @artist.age %></h1>
-<%= image_tag @artist.image_url %>
+<ul>
+  <% @artist.songs.each do |songs| %>
+  <li> <%= link_to song.name, song_path(song) %>
+  <% end %>
+</ul>
+
+  <% else %>
+    <p> This artist has any songs yet :( </p>
+  <% end %>
+
+  <%= link_to "Edit this artist", edit_artist_path(@artist) %>
+  <%= link_to "Delete this artist", artist_path(@artist), method: :delete, data: {confirm: "Are you sure to delete this artist and all his songs?"} %>

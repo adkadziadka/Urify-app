@@ -22,6 +22,9 @@ gem 'uglifier', '>= 1.3.0'
 # Bootstrap for styling
 gem 'bootstrap-sass', '~> 3.3.6'
 
+# CarrierWave
+gem 'carrierwave', '0.11.2'
+
 # jQuery for easier javascript
 gem 'jquery-rails', '~> 4.3.1'
 

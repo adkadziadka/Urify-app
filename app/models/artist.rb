@@ -7,7 +7,7 @@ class Artist < ApplicationRecord
     create_table  :artists do |t|
       t.string    :name
       t.integer   :age
-      t.string    :image_url
+      t.string    :img_url
 
       t.timestamps
     end

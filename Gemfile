@@ -25,6 +25,9 @@ gem 'bootstrap-sass', '~> 3.3.6'
 # CarrierWave
 gem 'carrierwave', '0.11.2'
 
+#cloudinary
+gem 'cloudinary', '1.2.3'
+
 # jQuery for easier javascript
 gem 'jquery-rails', '~> 4.3.1'
 

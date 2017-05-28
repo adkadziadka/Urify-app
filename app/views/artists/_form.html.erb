@@ -1,0 +1,18 @@
+<%= form_for artist_artists_path do |x| %>
+
+  <ul>
+    <% @artist.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      <% end %>
+  </ul>
+  <%= x.label :name %>
+  <%= x.text_field :name %>
+
+  <%= x.label :age %>
+  <%= x.number_field :age %>
+
+  <%= x.label :"Image URL" %>
+  <%= x.text_field :img_url %>
+
+  <%= x.submit (@artist.new_record? ? "Add new Artist" : "Update") %>
+<% end %>

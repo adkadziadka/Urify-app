@@ -8,6 +8,16 @@ class ArtistsController < ApplicationController
   def new
     @artist = Artist.new
   end
+    
+    def update
+        @artist = Artist.find(params[:artist_id])
+        
+        if@artist.update_attributes(artist_params)
+            redirect_to @artist
+        else
+            render 'edit'
+        end
+    end
 
   def create
     artist_params = params.require(:artist).permit(:name, :age, :image_url)

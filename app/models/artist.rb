@@ -1,5 +1,5 @@
 class Artist < ApplicationRecord
-  has_many :rooms, dependent: :destroy
+  has_many :songs, dependent: :destroy
 
   validates :name, presence: true, uniqueness: true, length: { maximum: 50}
 
@@ -11,8 +11,5 @@ class Artist < ApplicationRecord
 
       t.timestamps
     end
-  end
-  def show
-    @artist = Artist.find(params[:artist_id])
   end
 end

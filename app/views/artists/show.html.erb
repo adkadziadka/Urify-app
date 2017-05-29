@@ -1,5 +1,6 @@
 <h2><%= @artist.name %></h2>
 <h3>All songs in repository:</h3>
+    <% if @artist.songs.present? %>
     <ul>
         <% @artist.songs.each do |songs| %>
             <li> <%= link_to song.name, song_path(song) %>
@@ -13,6 +14,7 @@
 
 
 <footer>
+  <%= link_to "Add new song", new_artist_song_path(@artist) %>
   <%= link_to "Edit this artist", edit_artist_path(@artist) %>
   <%= link_to "Delete this artist", artist_path(@artist), method: :delete, data: {confirm: "Are you sure to delete this artist and all his songs?"} %>
 </footer>

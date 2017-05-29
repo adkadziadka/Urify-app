@@ -1,4 +1,4 @@
-<%= form_for artist_artists_path do |x| %>
+<%= form_for new_artist_path do |x| %>
 
   <ul>
     <% @artist.errors.full_messages.each do |message| %>
@@ -14,5 +14,5 @@
   <%= x.label :"Image URL" %>
   <%= x.text_field :img_url %>
 
-  <%= x.submit (@artist.new_record? ? "Add new Artist" : "Update") %>
+  <%= x.submit (@artist.new_record? ? "Add new Artist" : "Update Artist") %>
 <% end %>

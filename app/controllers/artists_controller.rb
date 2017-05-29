@@ -4,7 +4,7 @@ class ArtistsController < ApplicationController
     @artists = Artist.all
   end
     
-    def show
+  def show
     @artist = Artist.find(params[:id])
   end
     
@@ -14,45 +14,53 @@ class ArtistsController < ApplicationController
     
 
   def create
-    artist_params = params.require(:artist).permit(:name, :age, :image_url)
+    #artist_params = params.require(:artist).permit(:name, :age, :img_url)
 
-    @artist = Artist.new(artist_params)
+    @artist = Artist.new(params[:id])
 
     if @artist.save
       redirect_to @artist
-    end
+    else
+      render 'new'
+    end      
   end
     
-    def edit
-        find_artist
+  def edit
+    @artist = Artist.find(params[:id])
+  end
+
+  def update
+    @artist = Artist.find(params[:id])
+    #artist_params = params.require(:artist).permit(:name, :age, :img_url)
+
+    if @artist.update_attributes(params[:id])
+      redirect_to @artist
+    else
+      render 'edit'
     end
-    
-    def update
-        @artist = Artist.find(params[:artist_id])
-        
-        if@artist.update_attributes(artist_params)
-            redirect_to @artist
-        else
-            render 'edit'
-        end
-    end
-    
-    def destroy
-        find_artist
-        
-        @artist.destroy
-        redirect_to artist_artists_path, notice: "Artist deleted!"
-    end
-    
-    private
-    
-    def find_artist
-        @artist = Artist.find(params[:artist_id])
-    end
-    
-    def artist_params
-        artist_params- params.require(:atist).permit(:name, :age, :img_url)
-    end
+  end
+
+  def destroy
+    @artist = Artist.find(params[:id])
+
+    @artist.destroy
+
+    redirect_to artists_path, notice: "Artist deleted!"
+  end
+
+  private
+
+  def find_artist
+    @artist = Artist.find(params[:id])
+  end
+
+#  def artist_params
+#    params.require(:id).permit(
+#        :name, 
+#        :age, 
+#        :img_url
+#    )
+#  end
     
 
 end

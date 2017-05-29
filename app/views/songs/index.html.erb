@@ -1,0 +1,15 @@
+<h1>Artist's songs:</h1>
+
+<div class="songs-list">
+    <% @song.each do |song| %>
+    
+    <ul class="songs">
+        <%= link_to song.name, artist_song_path(song.id) %>
+    
+    </ul>
+    <% end %>
+</div>
+
+<footer>
+<%= link_to "Add a new song!", new_artist_song_path %>
+</footer>

@@ -1,15 +1,19 @@
-<h1>Artist's songs:</h1>
+<h1>All repository:</h1>
 
-<div class="songs-list">
-    <% @song.each do |song| %>
-    
-    <ul class="songs">
-        <%= link_to song.name, artist_song_path(song.id) %>
-    
-    </ul>
-    <% end %>
+<div class="artists-container">
+  <% @songs.each do |song| %>
+   
+	<ul class="songs">
+		
+ 		<h3><%= link_to song.title, artist_songs_path(song) %></h3>
+			
+  </ul>
+   <% end %>
 </div>
 
 <footer>
-<%= link_to "Add a new song!", new_artist_song_url %>
+	<%= link_to "All Artists", artist_url(@songs) %>
+  <%= link_to "Add new song", new_artist_song_url %>
 </footer>
+
+

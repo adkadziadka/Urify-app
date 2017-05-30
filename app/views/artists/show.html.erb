@@ -22,11 +22,19 @@
   <% end %>
 	</div>
 </div>
+<br>
+<hr>
+<br>
 
+<div class="gallery">
+<h3>Artist's gallery:</h3>
+	
+</div>
 
 <footer>
 	<%= link_to "All artists", artists_path(@artist) %>
   <%= link_to "Add new artist", new_artist_song_path(@artist) %>
+	<%= link_to "Add new song", new_artist_song_path(@artist) %>
   <%= link_to "Edit this artist", edit_artist_path(@artist) %>
   <%= link_to "Delete this artist", artist_path(@artist), method: :delete, data: {confirm: "Are you sure to delete this artist and all his songs?"} %>
 </footer>

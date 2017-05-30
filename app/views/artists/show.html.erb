@@ -1,18 +1,26 @@
-<div class="artists-container">
-<h2><%= @artist.name %></h2>
-	
+<div class="artists artist-flex">
+	<div class="artist-big"><%= image_tag @artist.img_url %></div>
+	<div class="container-data">
+	<h2><%= @artist.name %></h2>
+		<hr>
+	<h4>Age: <%= @artist.age %></h4>
+		<br>
+		<br>
+		
+		
 <h3>All songs in repository:</h3>
 	
     <% if @artist.songs.present? %>
     <ul>
         <% @artist.songs.each do |songs| %>
-            <li> <%= link_to song.name, song_path(song) %>
+            <li> <%= link_to songs.title %>
         <% end %>
     </ul>
 
   <% else %>
     <p> This artist has any songs yet :( </p>
   <% end %>
+	</div>
 </div>
 
 

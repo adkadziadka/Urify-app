@@ -14,9 +14,7 @@ class ArtistsController < ApplicationController
     
 
   def create
-    #artist_params = params.require(:artist).permit(:name, :age, :img_url)
-
-    @artist = Artist.new(params[:id])
+    @artist = Artist.new(artist_params)
 
     if @artist.save
       redirect_to @artist
@@ -31,9 +29,9 @@ class ArtistsController < ApplicationController
 
   def update
     @artist = Artist.find(params[:id])
-    #artist_params = params.require(:artist).permit(:name, :age, :img_url)
+    artist_params = params.require(:artist).permit(:name, :age, :img_url)
 
-    if @artist.update_attributes(params[:id])
+    if @artist.update_attributes(artist_params)
       redirect_to @artist
     else
       render 'edit'
@@ -54,13 +52,13 @@ class ArtistsController < ApplicationController
     @artist = Artist.find(params[:id])
   end
 
-#  def artist_params
-#    params.require(:id).permit(
-#        :name, 
-#        :age, 
-#        :img_url
-#    )
-#  end
+  def artist_params
+    params.require(:artist).permit(
+        :name, 
+        :age, 
+        :img_url
+    )
+  end
     
 
 end

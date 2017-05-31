@@ -1,12 +1,12 @@
-<h1> <%= @song.name %></h1>
+<h1> <%= @song.title %></h1>
 
-<p> Stage name: <%= @song.song_title %></p>
-<p> Description: <%= @song.song_description %></p>
-<p> Release year: <%= @song.song_year %></p>
+<p> Stage name: <%= @song.title %></p>
+<p> Description: <%= @song.description %></p>
+<p> Release year: <%= @song.year %></p>
 
 <footer>
 	<%= link_to "All songs", artist_songs_path(@artist) %>
-  <%= link_to "Add new song", new_artist_song_url %>
+  <%= link_to "Add new song", new_artist_song_path(@artist) %>
 	<%= link_to "Edit song description", edit_artist_song_path(@song.id) %>
-	<%= link_to "Delete song", artist_songs_path(@song.id),method: :delete, data: {confirm: "Are you sure to delete this song?" } %>
+	<%= link_to "Delete song", artist_songs_path(@song.id), method: :delete, data: {confirm: "Are you sure to delete this song?" } %>
 </footer>

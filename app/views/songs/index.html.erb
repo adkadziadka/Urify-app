@@ -5,7 +5,7 @@
    
 	<ul class="songs">
 		
-		<h3><%= link_to song.title, artist_songs_path(song) %>, by <%= song.artist.name %></h3>
+		<h3><%= link_to song.title, artist_song_path(id: song.id, artist_id: song.artist.id) %>, by <%= song.artist.name %></h3>
 			
   </ul>
    <% end %>

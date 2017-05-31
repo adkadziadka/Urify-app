@@ -2,16 +2,31 @@
 @import "bootstrap";
 
 html{
-  background-color: black;
-  color: lightgrey;
-  font-family: 'Cabin', sans-serif;
+  	background-color: #303841;
 }
 
 body{
-padding-bottom: 25%;
+		padding-bottom: 15%;
+		font-family: 'Cabin', sans-serif;
+		background-color: #D3D6DB;
+}
+
+hr{
+	border-color: #303841;
+}
+
+a{
+		text-decoration: none;
+		color: #BE3144;
+}
+
+a:hover{
+		text-decoration: none;
+		font-weight: 600;
+		color: #BE3144;
 }
 .welcome{
-margin-left: 70px;
+		margin-left: 70px;
 }
 button-main{
     list-style: none;
@@ -45,7 +60,7 @@ h1{
 }
 
 .artist{
-    background-color: rgba(98, 74, 74, 0.08);
+    background-color: rgba(58, 71, 80, .2);
     border-radius: 2%;
     padding:10px;
     margin: 10px;
@@ -69,28 +84,28 @@ footer{
 }
 
 footer a{
-	margin-left: 30px;
+		margin-left: 30px;
 }
 .artist-flex{
-	display: flex;
+		display: flex;
 }
 
 .artist-big img{
-	background-color: rgba(98, 74, 74, 0.08);
-  border-radius: 2%;
-  padding:80px 50px 25px 50px;
-	width: 500px;
-	margin-left: 100px;
+		background-color: rgba(98, 74, 74, 0.08);
+  	border-radius: 2%;
+  	padding:80px 50px 25px 50px;
+		width: 500px;
+		margin-left: 100px;
 }
 
 .container-data{
-	width: 500px;
-	margin-left: 100px;
+		width: 500px;
+		margin-left: 100px;
 }
 
 .gallery{
-width:100%;
-margin: 30px;
+		width:100%;
+		margin: 30px;
 }
 
 

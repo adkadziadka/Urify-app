@@ -1,5 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe Song, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe "validations" do
+    it "is valid when all the attributes are present" do
+      song = build :song
+      song.valid?
+      expect(song.errors).to be_empty
+    end
+	end
 end

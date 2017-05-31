@@ -45,7 +45,7 @@ class SongsController < ApplicationController
 
     @song.destroy
 
-    redirect_to artist_song_path, notice: "Song deleted!"
+    redirect_to artist_songs_path, notice: "Song deleted!"
  	end
 
  	private

@@ -10,13 +10,14 @@ body{
 		margin-bottom: 30%;
 		font-family: 'Cabin', sans-serif;
 		color: #2C2D34;
-		heigh: 1000px;
+		height: auto;
 		background: red; 
     background: -webkit-linear-gradient(#EFD510, #E94822); 
     background: -o-linear-gradient(#EFD510, #E94822); 
     background: -moz-linear-gradient(#EFD510, #E94822);
     background: linear-gradient(#EFD510, #E94822); 
 }
+
 
 hr{
 	border-color: #E94822;
@@ -25,6 +26,7 @@ hr{
 a{
 		text-decoration: none;
 		color: #E94822;
+		text-shadow: 1.1px 1px 0.8px black;
 }
 
 a:hover{
@@ -48,6 +50,7 @@ button-main{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+	z-index: 5;
 }
 
 .artist-container img{
@@ -55,22 +58,34 @@ button-main{
     max-height: 240px;
     border-radius: 2%;
     margin: 20px;
+	z-index: 5;
 }
 
+.songs-container{
+	max-width: 960px;
+	height:600px;
+	margin:8%;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	z-index: 5;
+}
 
 h3{
     font-size:20px;
 }
 
 h1{
-    margin: 0 0 0 70px;
+		font-size: 60px;
+    margin: 20px 0 10px 70px;
 }
 
 .artist{
-    background-color: rgba(58, 71, 80, .2);
+    background-color: #2C2D34;
     border-radius: 2%;
     padding:10px;
     margin: 10px;
+	z-index: 5;
 }
 .artist a{
     margin: 20px;
@@ -88,6 +103,7 @@ footer{
     position: fixed;
     background-color: black;
     padding: 5px 0 15px 70px;
+	z-index: 6;
 }
 
 footer a{
@@ -98,7 +114,7 @@ footer a{
 }
 
 .artist-big img{
-		background-color: rgba(98, 74, 74, 0.08);
+		background-color: rgba(98, 74, 74, 0.3);
   	border-radius: 2%;
   	padding:80px 50px 25px 50px;
 		width: 500px;
@@ -110,11 +126,60 @@ footer a{
 		margin-left: 100px;
 }
 
-.gallery{
-		width:100%;
-		margin: 30px;
+
+.repository-songs{
+		font-size: 16px;
 }
 
+.brutal{
+		opacity: .5;
+		z-index: 1;
+		width: 1200px;
+		position: absolute;
+		top: 200px;
+		margin-left: 10px;
+}
 
+.brutal p{
+		margin-top: -80px;
+		font-family: 'Black Ops One', cursive;
+		font-size: 280px;
+		text-align: center;
 
+		text-shadow: -10px 10px 0px #E94822,
+                 -20px 20px 0px #F2910A,
+                 -30px 30px 0px #EFD510;
+	}
+.one{
+	letter-spacing: 0px;
+}
 
+.two{
+	letter-spacing: 15px;
+	margin-left: 30px;
+}
+
+.three{
+	letter-spacing: 25px;
+	margin-left: 5px;
+}
+
+.four{
+	letter-spacing: -5px;
+}
+
+form{
+	margin: 100px 5%;
+}
+
+button{
+	background-color: #E94822;
+}
+
+button:hover{
+	background-color: #F2910A;
+}
+
+input{
+	border-color: #2C2D34;
+}

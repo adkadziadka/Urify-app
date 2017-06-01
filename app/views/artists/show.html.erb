@@ -10,7 +10,7 @@
 		
 		
 <h3>All songs in repository:</h3>
-	
+	<div class="repository-songs">
     <% if @artist.songs.present? %>
     <ul>
         <% @artist.songs.each do |song| %>
@@ -21,16 +21,11 @@
   <% else %>
     <p> This artist has any songs yet :( </p>
   <% end %>
+		</div>
 	</div>
 </div>
-<br>
-<hr>
-<br>
 
-<div class="gallery">
-<h3>Artist's gallery:</h3>
-	
-</div>
+
 
 <footer>
 	<%= link_to "All artists", artists_path(@artist) %>

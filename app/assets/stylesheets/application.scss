@@ -2,28 +2,35 @@
 @import "bootstrap";
 
 html{
-  	background-color: #303841;
+		background-color: transparent;
 }
 
 body{
 		padding-bottom: 15%;
+		margin-bottom: 30%;
 		font-family: 'Cabin', sans-serif;
-		background-color: #D3D6DB;
+		color: #2C2D34;
+		heigh: 1000px;
+		background: red; 
+    background: -webkit-linear-gradient(#EFD510, #E94822); 
+    background: -o-linear-gradient(#EFD510, #E94822); 
+    background: -moz-linear-gradient(#EFD510, #E94822);
+    background: linear-gradient(#EFD510, #E94822); 
 }
 
 hr{
-	border-color: #303841;
+	border-color: #E94822;
 }
 
 a{
 		text-decoration: none;
-		color: #BE3144;
+		color: #E94822;
 }
 
 a:hover{
 		text-decoration: none;
 		font-weight: 600;
-		color: #BE3144;
+		color: #E94822;
 }
 .welcome{
 		margin-left: 70px;

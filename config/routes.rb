@@ -13,7 +13,8 @@ Rails.application.routes.draw do
 
 		#patch 'artists/:id'     => 'artists#update'
 		#delete 'artists/:id'    => 'artists#destroy'
-		post 'artist'							=>'artists#create'
+		#post 'artist'						=>'artists#create'
+
 	end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

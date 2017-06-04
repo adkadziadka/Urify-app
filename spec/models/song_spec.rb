@@ -7,5 +7,5 @@ RSpec.describe Song, type: :model do
       song.valid?
       expect(song.errors).to be_empty
     end
-	end
+  end
 end

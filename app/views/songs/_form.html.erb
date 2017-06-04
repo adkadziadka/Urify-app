@@ -1,21 +1,20 @@
-<%= form_for artist_songs_url do |x| %>
-
+<%= form_with do |x| %>
   <ul>
     <% @song.errors.full_messages.each do |message| %>
       <li><%= message %></li>
       <% end %>
   </ul>
   <%= x.label :title %>
-  <%= x.text_field :title %>
+  <%= x.text_field :title, :id => "song_title" %>
 
 	<%= x.label :artist %>
-  <%= x.text_field :artit %>
+  <%= x.text_field :artist, :id => "song_artist" %>
 
   <%= x.label :description %>
-  <%= x.text_field :description %>
+  <%= x.text_field :description, :id => "song_description" %>
 
   <%= x.label :year %>
-  <%= x.number_field :year %>
+  <%= x.number_field :year, :id => "song_year" %>
 
-  <%= x.submit (@song.new_record? ? "Add new song" : "Update song") %>
+  <%= x.submit (@song.new_record? ? "Add new song" : "Update song"), :id => "form_submit"  %>
 <% end %>

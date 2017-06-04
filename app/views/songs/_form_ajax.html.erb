@@ -1,0 +1,21 @@
+<%= form_for @song, html: {remote: true} do |x| %>
+
+  <ul>
+    <% @song.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      <% end %>
+  </ul>
+  <%= x.label :title %>
+  <%= x.text_field :title %>
+
+	<%= x.label :artist %>
+  <%= x.text_field :artist %>
+
+  <%= x.label :description %>
+  <%= x.text_field :description %>
+
+  <%= x.label :year %>
+  <%= x.number_field :year %>
+
+  <button><%= 'Add new song' %></button>
+<% end %>

@@ -14,9 +14,14 @@
     <% if @artist.songs.present? %>
     <ul>
         <% @artist.songs.each do |song| %>
-            <li> <%= link_to song.title, artist_song_path(song) %>
+            <li> 
+            	<%= link_to song.title, song_path(song), id: song.id, class: 'song' %> 
+            	<button class='delete_song'> Delete song </button>
+            </li>
         <% end %>
     </ul>
+
+    <button class='delete_all_songs'> Delete all songs </button>
 
   <% else %>
     <p> This artist has any songs yet :( </p>
@@ -30,7 +35,7 @@
 <footer>
 	<%= link_to "All artists", artists_path(@artist) %>
   <%= link_to "Add new artist", new_artist_path %>
-	<%= link_to "Add new song", new_artist_song_path(@artist) %>
+	<%= link_to "Add new song", new_song_path %>
   <%= link_to "Edit this artist", edit_artist_path(@artist) %>
   <%= link_to "Delete this artist", artist_path(@artist), method: :delete, data: {confirm: "Are you sure to delete this artist and all his songs?"} %>
 </footer>

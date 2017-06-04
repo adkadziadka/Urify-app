@@ -5,8 +5,8 @@
 <p> Release year: <%= @song.year %></p>
 
 <footer>
-	<%= link_to "All songs", artist_songs_path(@artist) %>
-  <%= link_to "Add new song", new_artist_song_path(@artist) %>
-	<%= link_to "Edit song description", edit_artist_song_path(@song.id) %>
-	<%= link_to "Delete song", artist_song_path(id: @song.id), method: :delete, data: {confirm: "Are you sure to delete this song?" } %>
+	<%= link_to "All songs", songs_path(@artist) %>
+  <%= link_to "Add new song", new_song_path %>
+	<%= link_to "Edit song description", edit_song_path(@song.id) %>
+	<%= link_to "Delete song", song_path(id: @song.id), method: :delete, data: {confirm: "Are you sure to delete this song?" } %>
 </footer>

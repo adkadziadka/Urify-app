@@ -29,10 +29,9 @@ class ArtistsController < ApplicationController
 
   def update
     @artist = Artist.find(params[:id])
-    artist_params = params.require(:artist).permit(:name, :age, :img_url)
 
     if @artist.update_attributes(artist_params)
-      redirect_to @artist
+      redirect_to @artist, notice: "Artist updated!"
     else
       render 'edit'
     end
@@ -53,11 +52,7 @@ class ArtistsController < ApplicationController
   end
 
   def artist_params
-    params.require(:artist).permit(
-        :name, 
-        :age, 
-        :img_url
-    )
+    params.require(:artist).permit(:name, :age, :img_url)
   end
     
 

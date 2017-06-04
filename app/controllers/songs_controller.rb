@@ -9,15 +9,18 @@ class SongsController < ApplicationController
  	end
   
  	def create
-    #song_params = params.require(:song).permit(:name, :age, :img_url)
+    @artist = Artist.find_by_name(params[:song][:artist])
+    @song = Song.new(song_params.merge(artist: @artist))
 
-    @song = Song.new(song_params.merge(artist_id: params[:artist_id]))
-
-    if @song.save
-      redirect_to artist_path(@artist.id), notice: "Song saved!"
-    else
-      render :new
-    end      
+    respond_to do |format|
+      if @song.save
+        format.html { redirect_to artist_path(@artist), notice: "Song saved!" }
+        format.json { render :show, status: :created, location: @song }
+      else
+        format.html { render :new }
+        format.json { render json: @song.errors, status: :unprocessable_entity }
+      end
+    end   
  	end
     
  	def edit
@@ -26,9 +29,8 @@ class SongsController < ApplicationController
 
  	def update
     @song = Song.find(params[:id])
-    #song_params = params.require(:song).permit(:name, :age, :img_url)
 
-    if @song.update_attributes(params[:id])
+    if @song.update_attributes(song_params)
       redirect_to @song, notice: "Song updated!"
     else
       render :edit
@@ -37,22 +39,27 @@ class SongsController < ApplicationController
 
 	def show
 		@song = Song.find(params[:id])
-		@artist = Artist.find(@song.artist_id)
+		@artist = Artist.find(@song.artist.id)
 	end
 	
  	def destroy
     @song = Song.find(params[:id])
+    @artist = Artist.find(@song.artist.id)
 
     @song.destroy
 
-    redirect_to artist_songs_path, notice: "Song deleted!"
+    respond_to do |format|
+      format.html { redirect_to songs_path, notice: "Song deleted!" }
+      format.json { render :show, status: :deleted, location: @artist }
+    end 
+
+    
  	end
 
  	private
 	
 	def song_params
-		params.require(:song).permit(:title, :artist, :description, :year)
-
+		params.require(:song).permit(:title, :description, :year)
 	end
 end
 

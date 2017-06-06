@@ -59,7 +59,7 @@ describe "CRUD songs" do
     expect(page).to have_text("song1")
     expect(page).to have_text("song2")
 
-    click_button('Delete all songs').click
+    click_button('Delete all songs')
 
     # We refresh the page
     visit page.driver.browser.current_url

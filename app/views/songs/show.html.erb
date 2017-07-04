@@ -1,9 +1,9 @@
 <h1> <%= @song.title %></h1>
-
-<p> Title: <%= @song.title %></p>
-<p> Description: <%= @song.description %></p>
-<p> Release year: <%= @song.year %></p>
-
+<div class="details-song">
+	<p><strong> Title: </strong> <%= @song.title %></p>
+	<p><strong> Description:</strong> <%= @song.description %></p>
+	<p><strong> Release year:</strong> <%= @song.year %></p>
+</div>
 <footer>
 	<%= link_to "All songs", songs_path(@artist) %>
   <%= link_to "Add new song", new_song_path %>

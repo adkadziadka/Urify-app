@@ -1,7 +1,9 @@
 <div class="artists artist-flex">
 	<div class="artist-big">
-		<%= image_tag @artist.img_url %></div>
+		<%= image_tag @artist.img_url %>  
+  </div>
 	<div class="container-data">
+  <br>
 	<h2><%= @artist.name %></h2>
 		<hr>
 	<h4>Age: <%= @artist.age %></h4>
@@ -16,13 +18,13 @@
         <% @artist.songs.each do |song| %>
             <li> 
             	<%= link_to song.title, song_path(song), id: song.id, class: 'song' %> 
-            	<button class='delete_song'> Delete song </button>
+            	<button class='delete_song btn btn-link btn-sm'> &#10006; </button>
             </li>
         <% end %>
     </ul>
-
-    <button class='delete_all_songs'> Delete all songs </button>
-
+    <br>
+    <br>
+    <button class='delete_all_songs btn btn-danger btn-sm'> Delete all songs </button>
   <% else %>
     <p> This artist has any songs yet :( </p>
   <% end %>

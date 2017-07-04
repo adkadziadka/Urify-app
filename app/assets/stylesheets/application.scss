@@ -1,21 +1,10 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-html{
-		background-color: transparent;
-}
-
 body{
-		padding-bottom: 15%;
-		margin-bottom: 30%;
 		font-family: 'Cabin', sans-serif;
 		color: #2C2D34;
-		height: auto;
-		background: red; 
-    background: -webkit-linear-gradient(#EFD510, #E94822); 
-    background: -o-linear-gradient(#EFD510, #E94822); 
-    background: -moz-linear-gradient(#EFD510, #E94822);
-    background: linear-gradient(#EFD510, #E94822); 
+		padding-botton: 50px;
 }
 
 
@@ -34,14 +23,17 @@ a:hover{
 		font-weight: 600;
 		color: #E94822;
 }
-.welcome{
-		margin-left: 70px;
+
+.box{
+	display: flex;
+	flex-direction: column;
+	margin: 50px auto;
+	width: 1000px;
+	background-color: rgba(244, 239, 239, 0.5);
+	padding: 30px;
+	border-radius: 2%;
 }
-button-main{
-    list-style: none;
-    text-decoration: none;
-    margin-left: 20px;
-}
+
 
 .artist-container {
     max-width: 960px;
@@ -50,7 +42,6 @@ button-main{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-	z-index: 5;
 }
 
 .artist-container img{
@@ -72,29 +63,91 @@ button-main{
 }
 
 h3{
-    font-size:20px;
+  font-size:20px;
 }
 
 h1{
-		font-size: 60px;
-    margin: 20px 0 10px 70px;
+	font-size: 60px;
+  margin: 20px 0 10px 70px;
 }
 
+.artist-flex{
+	display: flex;
+  margin-bottom: 100px  !important;
+}
 .artist{
-    background-color: #2C2D34;
-    border-radius: 2%;
-    padding:10px;
-    margin: 10px;
-	z-index: 5;
-}
-.artist a{
-    margin: 20px;
+  background-color: #2C2D34;
+  border-radius: 2%;
+  padding:10px;
+  margin: 10px 10px 50px 10px;
+ }
+
+.artist-big img{
+	background-color: rgba(98, 74, 74, 0.5);
+	border-radius: 2%;
+	padding:80px 50px 25px 50px;
+	width: 400px;
+	margin-left: 100px;
 }
 
-.logo{
-    display: flex;
-    align-items: center;
-    margin: 0 auto;
+.repository-songs{
+	font-size: 16px;
+}
+
+
+.delete_song{
+		align-items: flex-end;
+}
+
+.button-to-right{
+		align-items: right;
+}
+
+.container-data{
+		background-color: rgba(244, 239, 239, 0.7);
+		padding: 30px;
+		border-radius: 2%;
+		width: 500px;
+		margin-left: 100px;
+		z-index:2;
+}
+
+.brutal{
+		opacity: .5;
+		width: 100%;
+		top: 15px;
+		position: absolute;
+		font-family: 'Black Ops One', cursive;
+		font-size: 215px;
+		text-align: center;
+		text-shadow: -10px 10px 0px #E94822,
+                 -20px 20px 0px #F2910A,
+                 -30px 30px 0px #EFD510;
+    z-index: -1;
+	}
+
+.three{
+	letter-spacing: 25px;
+	margin-left: 5px;
+}
+
+
+form{
+	margin: 100px 5%;
+}
+
+input{
+	border-color: #2C2D34;
+}
+
+.details-song{
+	display: flex;
+	flex-direction: column;
+	margin: 80px auto;
+	width: 1000px;
+	background-color: rgba(244, 239, 239, 0.7);
+	padding: 30px;
+	border-radius: 2%;
 }
 
 footer{
@@ -103,83 +156,9 @@ footer{
     position: fixed;
     background-color: black;
     padding: 5px 0 15px 70px;
-	z-index: 6;
+		z-index: 6;
 }
 
 footer a{
 		margin-left: 30px;
-}
-.artist-flex{
-		display: flex;
-}
-
-.artist-big img{
-		background-color: rgba(98, 74, 74, 0.3);
-  	border-radius: 2%;
-  	padding:80px 50px 25px 50px;
-		width: 500px;
-		margin-left: 100px;
-}
-
-.container-data{
-		width: 500px;
-		margin-left: 100px;
-}
-
-
-.repository-songs{
-		font-size: 16px;
-}
-
-.brutal{
-		opacity: .5;
-		z-index: 1;
-		width: 1200px;
-		position: absolute;
-		top: 200px;
-		margin-left: 10px;
-}
-
-.brutal p{
-		margin-top: -80px;
-		font-family: 'Black Ops One', cursive;
-		font-size: 280px;
-		text-align: center;
-
-		text-shadow: -10px 10px 0px #E94822,
-                 -20px 20px 0px #F2910A,
-                 -30px 30px 0px #EFD510;
-	}
-.one{
-	letter-spacing: 0px;
-}
-
-.two{
-	letter-spacing: 15px;
-	margin-left: 30px;
-}
-
-.three{
-	letter-spacing: 25px;
-	margin-left: 5px;
-}
-
-.four{
-	letter-spacing: -5px;
-}
-
-form{
-	margin: 100px 5%;
-}
-
-button{
-	background-color: #E94822;
-}
-
-button:hover{
-	background-color: #F2910A;
-}
-
-input{
-	border-color: #2C2D34;
 }
